@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wlopera.spring.dao.OfertasDAO;
+import com.wlopera.spring.dominio.Mes;
 import com.wlopera.spring.dominio.Oferta;
 
 @Service
@@ -18,8 +19,8 @@ public class GestorOfertasImpl implements GestorOfertas {
 		System.out.println("##=> Creando Gestor GestorOfertasImpl");
 	}
 
-	public List<Oferta> getOfertasDelMes(int idMes) {
-		 List<Oferta> ofertas =  ofertasRepo.getOfertasDelMes(idMes);
+	public List<Oferta> getOfertasDelMes(Mes mes) {
+		 List<Oferta> ofertas =  ofertasRepo.getOfertasDelMes(mes);
 		 
 		return ofertas;
 	}

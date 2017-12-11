@@ -24,25 +24,23 @@ public class OfertasDAODummy implements OfertasDAO {
 	 * @param mes: Mes de la oferta
 	 * @return Listado de ofertas para el mes solicitado 
 	 */
-	public List<Oferta> getOfertasDelMes(int idMes) {
+	public List<Oferta> getOfertasDelMes(Mes mes) {
 		int dias = getNumeroAleatorio(10);		
 		List<Oferta> ofertas = new ArrayList<Oferta>();
 		Oferta oferta;
-		double base = 1000d;
+		double base = 100d;
 		int descuento = 20;
 		
-		if (dias > 7) {
+		if (dias > 8) {
 			return null;
 		} else {
 			for (int i = 1; i < dias; i++) {
 				oferta = new Oferta();
-				Mes mes = new Mes ();
-				mes.setId(idMes);
-				mes.setNombre("Diciembre");
 				oferta.setMes(mes);
 				oferta.setMinNoches(i);
-				oferta.setPrecio(new BigDecimal((i * base) - ((descuento + (i + 10)) * (100 / base))));
-				int tipo = getNumeroAleatorio(1)+1;				
+				BigDecimal precio = new BigDecimal((i * base) - ((descuento + (i + 10)) * (100 / base)));
+				oferta.setPrecio(precio.setScale(2));
+				int tipo = (int)Math.round( Math.random());		
 				oferta.setTipoHab((tipo == 0)?TipoHabitacion.INDIVIDUAL:TipoHabitacion.DOBLE);
 				ofertas.add(oferta);
 			}

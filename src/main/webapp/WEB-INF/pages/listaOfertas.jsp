@@ -5,7 +5,7 @@
 <title>Ofertas del Mes</title>
 </head>
 <body>
-	<h1>Hacer Pédido</h1>
+	<h1>Ofertas del Mes</h1>
 	<hr>
 
 	<c:if test="${not empty ofertas}">
