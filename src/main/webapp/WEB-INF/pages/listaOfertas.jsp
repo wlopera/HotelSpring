@@ -13,7 +13,7 @@
 		<ul>
 			<c:forEach items="${ofertas}" var="o">
 				<li>Habitación ${o.tipoHab} un mínimo de ${o.minNoches} noches
-					por solo ${o.precio} USD. por noche</li>
+					por solo ${o.precio} USD. </li>
 			</c:forEach>
 		</ul>
 	</c:if>

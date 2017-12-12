@@ -15,7 +15,12 @@
 		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
+
 	<mvc:annotation-driven />
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="com/wlopera/spring/controller/mensajesWeb" />
+	</bean>
 
 </beans>
